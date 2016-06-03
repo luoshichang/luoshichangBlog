@@ -45,7 +45,7 @@ CREATE TABLE message
    sendtime datetime,
    user_id int unsigned,
    praise int,
-   FOREIGN KEY(articleid) REFERENCES acrticle(id)ON delete CASCADE
+   FOREIGN KEY(articleid) REFERENCES acrticle(id)ON delete CASCADE,
    FOREIGN KEY(user_id) REFERENCES user(id)ON delete CASCADE
    );
 

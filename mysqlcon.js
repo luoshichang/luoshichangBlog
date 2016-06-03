@@ -4,10 +4,10 @@
 function _exec(sql,after,res) {
     var mysql = require('mysql');
     var option = {
-        host     : 'localhost',
-        user     : 'root',
-        password : '123',
-        database : 'blog'
+        host     : 'w.rdc.sae.sina.com.cn',
+        user     : '5xxwzly4zl',
+        password : '4kxlymz351mijxkyzz403i4w320zkmy04zyiw22m',
+        database : 'app_luoshichang'
     };
     var client = mysql.createConnection(option);
     client.connect(function(err){
