@@ -167,4 +167,4 @@ var after= function(err,data,res){
 
     }
 }
-server.listen(80,'localhost');//监听端口
+server.listen(PORT,'localhost');//监听端口
