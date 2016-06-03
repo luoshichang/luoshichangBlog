@@ -1,0 +1,92 @@
+CREATE TABLE user
+   (
+   id  int unsigned  PRIMARY KEY NOT NULL auto_increment unique,
+   username varchar(10) NOT NULL unique,
+   password varchar(10),
+   jointime datetime,
+   instroduction varchar(255),
+   adminlabel bit(1),
+   imagepath  varchar(255)   
+   )ENGINE=InnoDB DEFAULT CHARSET=gbk AUTO_INCREMENT=1;
+CREATE TABLE images
+   (
+   id int unsigned PRIMARY KEY  NOT NULL auto_increment,
+   title varchar (255) NOT NULL,
+   imagepath Nvarchar(50) NOT NULL,
+   content Nvarchar(255),
+   width int,
+   height int,
+   jointime datetime
+   );
+CREATE TABLE articletype
+   (
+   id int  unsigned PRIMARY KEY NOT NULL auto_increment,
+   Type varchar(10)
+   );
+CREATE TABLE acrticle
+   (
+    id int unsigned  PRIMARY KEY NOT NULL auto_increment,
+    title varchar(30) NOT NULL,
+    content TEXT NOT NULL,
+    jointime datetime ,
+    user_id int unsigned,
+    articleid int  unsigned,
+    praise int,
+    acrticlefrom char(10),
+    FOREIGN KEY acrticle(user_id) REFERENCES user(id)ON delete CASCADE,
+    FOREIGN KEY(articleid) REFERENCES articletype(id)ON delete CASCADE
+   );
+CREATE TABLE message
+  (
+   id int unsigned  PRIMARY KEY NOT NULL auto_increment,
+   name char(10),
+   articleid int  unsigned,
+   content varchar(255) NOT NULL,
+   sendtime datetime,
+   user_id int unsigned,
+   praise int,
+   FOREIGN KEY(articleid) REFERENCES acrticle(id)ON delete CASCADE
+   FOREIGN KEY(user_id) REFERENCES user(id)ON delete CASCADE
+   );
+
+CREATE TABLE reply 
+   (
+   id int unsigned PRIMARY KEY  NOT NULL auto_increment,
+   content varchar(255) NOT NULL,
+   user_id int unsigned NOT NULL,
+   acrticle_id int unsigned NOT NULL,
+   replytime datetime NOT NULL,
+   replypeople varchar(10),  
+ FOREIGN KEY (user_id) REFERENCES user(id)ON delete CASCADE,
+       FOREIGN KEY (acrticle_id) REFERENCES acrticle(id)ON delete CASCADE
+   );
+CREATE TABLE articlecontent
+(
+   id int  unsigned PRIMARY KEY NOT NULL,
+   content TEXT NOT NULL,
+   FOREIGN KEY (id) REFERENCES acrticle(id)ON delete CASCADE
+)
+CREATE TABLE lifetype
+   (
+   id int  unsigned PRIMARY KEY NOT NULL auto_increment,
+   Type varchar(10)
+   );
+CREATE TABLE life
+   (
+    id int unsigned  PRIMARY KEY NOT NULL auto_increment,
+    title varchar(30) NOT NULL,
+    content TEXT NOT NULL,
+    jointime datetime ,
+    user_id int unsigned,
+    articleid int  unsigned,
+    praise int,
+    acrticlefrom char(10),
+    FOREIGN KEY (user_id) REFERENCES user(id)ON delete CASCADE,
+    FOREIGN KEY(articleid) REFERENCES lifetype(id)ON delete CASCADE
+   );
+CREATE TABLE lifecontent
+(
+   id int  unsigned PRIMARY KEY NOT NULL,
+   content TEXT NOT NULL,
+   FOREIGN KEY (id) REFERENCES life(id)ON delete CASCADE
+)
