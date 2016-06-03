@@ -8,8 +8,8 @@
     "email": "qaz1017360819@qq.com"
   },
   "dependencies": {
-    "mime":"2.15.0",
-    "mysql":"2.15.0"
+    "mime":" ",
+    "mysql":" "
   },
   "engines": {
     "node": "v4.4.2"
