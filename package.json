@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "mime":"2.15.0",
-    "mysql":"2.15.0",
+    "mysql":"2.15.0"
   },
   "engines": {
     "node": "v4.4.2"
