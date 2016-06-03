@@ -9,10 +9,14 @@
   },
   "dependencies": {
     "mime":" ",
-    "mysql":" "
+    "mysql":" ",
+    "querystring":"",
+    "url":"",
+    "http":""
   },
   "engines": {
-    "node": "v4.4.2"
+    "node": "v4.4.2",
+    "npm":"2.15.0"
   },
   "scripts": {
     "start": "node server.js"
