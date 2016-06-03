@@ -11,8 +11,6 @@
     "mime":" ",
     "mysql":" ",
     "querystring":"",
-    "url":"",
-    "http":""
   },
   "engines": {
     "node": "v4.4.2"
