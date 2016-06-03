@@ -10,7 +10,7 @@
   "dependencies": {
     "mime":" ",
     "mysql":" ",
-    "querystring":"",
+    "querystring":""
   },
   "engines": {
     "node": "v4.4.2"
