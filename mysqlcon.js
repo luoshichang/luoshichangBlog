@@ -4,8 +4,8 @@
 function _exec(sql,after,res) {
     var mysql = require('mysql');
     var option = {
-        host     : MYSQL_HOST,
-        port    ：MYSQL_PORT,
+        host     : 'r.rdc.sae.sina.com.cn',
+        port : 3307,
         user     : '5xxwzly4zl',
         password : '4kxlymz351mijxkyzz403i4w320zkmy04zyiw22m',
         database : 'app_luoshichang'
