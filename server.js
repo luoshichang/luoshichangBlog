@@ -167,4 +167,4 @@ var after= function(err,data,res){
 
     }
 }
-server.listen(process.env.PORT,'127.0.0.1');//监听端口
+server.listen(process.env.PORT);//监听端口
